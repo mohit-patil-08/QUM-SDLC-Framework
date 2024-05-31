@@ -1,0 +1,18 @@
+pages:
+  image: node:latest
+  script:
+    - apt-get update -qq && apt-get install -y zip
+    - export NODE_OPTIONS=--openssl-legacy-provider
+    - npm install
+    - npm run build
+    - cd dist
+    - cd ../
+    - rm -rf public
+    - cp -rf dist public
+    - cd dist && zip -r -9 ../public/dist.zip . && cd ../
+    - ls -lh public/
+  artifacts:
+    paths:
+      - public/
+  only:
+    - main
