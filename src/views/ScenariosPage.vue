@@ -18,6 +18,10 @@
             return-object variant="underlined" density="comfortable" color="black" item-color="black"
             item-title="title" hide-details :menu-props="{ scrollStrategy: 'none' }">
           </v-select>
+          
+          <div class="submit-btn">
+                <v-btn type="submit" color="primary">Submit</v-btn>
+            </div>
         </v-form>
     </div>
 </template>

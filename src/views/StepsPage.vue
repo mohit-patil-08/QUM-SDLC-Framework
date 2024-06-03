@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Persona</h1>
+        <h1>Steps</h1>
         <v-form>
             <v-text-field
                 label="Description"
@@ -8,37 +8,31 @@
                 outlined
             ></v-text-field>
 
-            <v-row v-if="goals.length">
+            <v-row v-if="actions.length">
                 <v-col cols="auto">
-                    <div>Goals: </div>
+                    <div>Actions: </div>
                 </v-col>
                 <v-col>
                     <ul class="ml-9">
-                        <li v-for="(goal, index) in goals" :key="index">{{ goal }}</li>
+                        <li v-for="(action, index) in actions" :key="index">{{ action }}</li>
                     </ul>
                 </v-col>
             </v-row>
             <v-row>
                 <v-col cols="11">
                     <v-text-field
-                        label="Goals"
-                        v-model="currentGoal"
+                        label="Actions"
+                        v-model="currentAction"
                         outlined
                     ></v-text-field>    
                 </v-col>
                 <v-col cols="1">
-                    <v-btn icon @click="addGoalsField">
+                    <v-btn icon @click="addActions">
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>
                 </v-col>
             </v-row>
 
-            <v-text-field
-                label="Painpoints"
-                v-model="painpoints"
-                outlined
-            ></v-text-field>
-            
             <div class="submit-btn">
                 <v-btn type="submit" color="primary">Submit</v-btn>
             </div>
@@ -49,14 +43,13 @@
 <script setup>
 import { ref } from 'vue';
 const description = ref("");
-const currentGoal = ref("");
-const goals = ref([]);
-const painpoints = ref("");
+const currentAction = ref("");
+const actions = ref([]);
 
-const addGoalsField = () => {
-    if(currentGoal.value.trim() !== '') {
-        goals.value.push(currentGoal.value);
-        currentGoal.value = "";
+const addActions = () => {
+    if(currentAction.value.trim() !== '') {
+        actions.value.push(currentAction.value);
+        currentAction.value = "";
     }
 }
 </script>

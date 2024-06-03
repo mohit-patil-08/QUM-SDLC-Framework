@@ -4,15 +4,17 @@ import TasksPage from "@/views/TasksPage.vue";
 import ScenariosPage from "@/views/ScenariosPage.vue";
 import PersonaPage from "@/views/PersonaPage.vue";
 import OutcomePage from "@/views/OutcomePage.vue";
+import StepsPage from "@/views/StepsPage.vue";
+import FlowsPage from "@/views/FlowsPage.vue";
 
 const router =  createRouter({
   history: createWebHashHistory("/"),
   routes: [
-    {
-      path: "/",
-      name: "home",
-      component: HomePage,
-    },
+    // {
+    //   path: "/",
+    //   name: "home",
+    //   component: HomePage,
+    // },
     {
       path: "/tasks",
       name: "tasks",
@@ -32,6 +34,16 @@ const router =  createRouter({
       path: "/outcome",
       name: "outcome",
       component: OutcomePage,
+    },
+    {
+      path: "/steps",
+      name: "steps",
+      component: StepsPage,
+    },
+    {
+      path: "/flows",
+      name: "flows",
+      component: FlowsPage,
     },
   ],
 });

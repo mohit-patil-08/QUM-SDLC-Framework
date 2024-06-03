@@ -8,7 +8,9 @@
                 outlined
             ></v-text-field>
 
-            <v-btn class="mt-2" type="submit" block>Submit</v-btn>
+            <div class="submit-btn">
+                <v-btn type="submit" color="primary">Submit</v-btn>
+            </div>
         </v-form>
     </div>
 </template>

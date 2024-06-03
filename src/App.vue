@@ -3,6 +3,7 @@
     <HeaderComponent />
     <v-main>
       <v-container fluid>
+        <HomePage />
         <RouterView />
       </v-container>
     </v-main>
@@ -11,7 +12,7 @@
 </template>
 
 <script setup>
-
+import HomePage from './components/HomePage.vue';
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 
@@ -47,6 +48,11 @@ html {
 
 .col {
   padding: 8px !important;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  text-align: center;
 }
 
 /* CSS for Scroll Bar*/
