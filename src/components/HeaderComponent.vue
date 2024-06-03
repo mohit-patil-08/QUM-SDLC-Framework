@@ -5,7 +5,7 @@
             <h1 class="customerName">{{ qumInfo.applicationName }}</h1>
         </div> -->
         <!-- <v-spacer></v-spacer> -->
-        <h1 class="appName">QUM SDLC Framework</h1>
+        <h1 class="appName">QUM SDLC</h1>
         <v-spacer></v-spacer>
         <div class="accion-logo d-flex align-center">
             <span>Powered by</span>

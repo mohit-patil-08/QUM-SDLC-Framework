@@ -51,8 +51,12 @@ html {
 }
 
 .submit-btn {
-  margin-top: 15px;
+  padding-top: 15px;
   text-align: center;
+}
+
+.v-select {
+  margin-bottom: 22px;
 }
 
 /* CSS for Scroll Bar*/

@@ -2,14 +2,12 @@
     <div>
         <h1>Flows</h1>
         <v-form>
-            <v-select v-model="tasksSelected" :items="tasksList" label="Tasks" return-object variant="underlined"
-                density="comfortable" color="black" item-color="black" item-title="title" hide-details
-                :menu-props="{ scrollStrategy: 'none' }">
+            <v-select v-model="scenarioSelected" :items="scenariosList" label="Scenarios" return-object color="black"
+                item-color="black" item-title="title" hide-details :menu-props="{ scrollStrategy: 'none' }">
             </v-select>
 
-            <v-select v-model="tasksSelected" :items="tasksList" label="Tasks" return-object variant="underlined"
-                density="comfortable" color="black" item-color="black" item-title="title" hide-details
-                :menu-props="{ scrollStrategy: 'none' }">
+            <v-select v-model="stepSelected" :items="stepsList" label="Steps" return-object color="black"
+                item-color="black" item-title="title" hide-details :menu-props="{ scrollStrategy: 'none' }">
             </v-select>
 
             <div class="submit-btn">
@@ -21,8 +19,18 @@
 
 <script setup>
 import { ref } from 'vue';
-const scenario = ref("");
-const steps = ref("");
+const scenarioSelected = ref(null);
+const stepSelected = ref(null);
+const scenariosList = ref([
+    { title: "Scenario 1", value: "scenario1" },
+    { title: "Scenario 2", value: "scenario2" },
+    { title: "Scenario 3", value: "scenario3" },
+]);
+const stepsList = ref([
+    { title: "Step 1", value: "step1" },
+    { title: "Step 2", value: "step2" },
+    { title: "Step 3", value: "step3" },
+]);
 </script>
 
 <style></style>

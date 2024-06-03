@@ -2,11 +2,7 @@
     <div>
         <h1>Steps</h1>
         <v-form>
-            <v-text-field
-                label="Description"
-                v-model="description"
-                outlined
-            ></v-text-field>
+            <v-text-field label="Description" v-model="description" outlined></v-text-field>
 
             <v-row v-if="actions.length">
                 <v-col cols="auto">
@@ -20,11 +16,7 @@
             </v-row>
             <v-row>
                 <v-col cols="11">
-                    <v-text-field
-                        label="Actions"
-                        v-model="currentAction"
-                        outlined
-                    ></v-text-field>    
+                    <v-text-field label="Actions" v-model="currentAction" outlined></v-text-field>
                 </v-col>
                 <v-col cols="1">
                     <v-btn icon @click="addActions">
@@ -47,12 +39,11 @@ const currentAction = ref("");
 const actions = ref([]);
 
 const addActions = () => {
-    if(currentAction.value.trim() !== '') {
+    if (currentAction.value.trim() !== '') {
         actions.value.push(currentAction.value);
         currentAction.value = "";
     }
 }
 </script>
 
-<style>
-</style>
+<style></style>
