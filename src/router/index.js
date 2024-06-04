@@ -6,6 +6,8 @@ import PersonaPage from "@/views/PersonaPage.vue";
 import OutcomePage from "@/views/OutcomePage.vue";
 import StepsPage from "@/views/StepsPage.vue";
 import FlowsPage from "@/views/FlowsPage.vue";
+import UserStoryMappingPage from "@/views/UserStoryMappingPage.vue";
+import ActualMetrics from "@/views/ActualMetrics.vue";
 
 const router =  createRouter({
   history: createWebHashHistory("/"),
@@ -44,6 +46,16 @@ const router =  createRouter({
       path: "/flows",
       name: "flows",
       component: FlowsPage,
+    },
+    {  
+      path: "/user-story-mapping",
+      name: "userStoryMapping",
+      component: UserStoryMappingPage,
+    },
+    {  
+      path: "/metrics",
+      name: "actualMetrics",
+      component: ActualMetrics,
     },
   ],
 });
