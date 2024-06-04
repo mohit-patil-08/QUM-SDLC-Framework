@@ -2,6 +2,8 @@
   <div>
     <h1>Scenarios</h1>
     <v-form>
+      <v-text-field label="Name" v-model="name" outlined></v-text-field>
+
       <v-text-field label="Description" v-model="description" outlined></v-text-field>
 
       <v-text-field label="Outcome" v-model="outcome" outlined></v-text-field>
@@ -19,6 +21,7 @@
 
 <script setup>
 import { ref } from 'vue';
+const name = ref("");
 const description = ref("");
 const outcome = ref("");
 const tasksSelected = ref(null);

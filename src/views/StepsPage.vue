@@ -2,6 +2,8 @@
     <div>
         <h1>Steps</h1>
         <v-form>
+            <v-text-field label="Name" v-model="name" outlined></v-text-field>
+            
             <v-text-field label="Description" v-model="description" outlined></v-text-field>
 
             <v-row v-if="actions.length">
@@ -34,6 +36,7 @@
 
 <script setup>
 import { ref } from 'vue';
+const name = ref("");
 const description = ref("");
 const currentAction = ref("");
 const actions = ref([]);

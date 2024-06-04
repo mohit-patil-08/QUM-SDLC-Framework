@@ -2,6 +2,8 @@
     <div>
         <h1>Outcome</h1>
         <v-form>
+            <v-text-field label="Name" v-model="name" outlined></v-text-field>
+
             <v-text-field label="Description" v-model="description" outlined></v-text-field>
 
             <v-select v-model="personaSelected" :items="personasList" label="Persona" return-object color="black"
@@ -17,6 +19,7 @@
 
 <script setup>
 import { ref } from 'vue';
+const name = ref("");
 const description = ref("");
 const personaSelected = ref(null);
 const personasList = ref([
