@@ -8,6 +8,7 @@
         <div><RouterLink to="/flows">Flows</RouterLink></div>
         <div><RouterLink to="/user-story-mapping">User Story Mappping</RouterLink></div>
         <div><RouterLink to="/metrics">Metrics</RouterLink></div>
+        <div><RouterLink to="/report-generation">Report Generation</RouterLink></div>
     </div>
 </template>
 

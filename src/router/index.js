@@ -7,7 +7,8 @@ import OutcomePage from "@/views/OutcomePage.vue";
 import StepsPage from "@/views/StepsPage.vue";
 import FlowsPage from "@/views/FlowsPage.vue";
 import UserStoryMappingPage from "@/views/UserStoryMappingPage.vue";
-import ActualMetrics from "@/views/ActualMetrics.vue";
+import ActualMetricsPage from "@/views/ActualMetricsPage.vue";
+import ReportGenerationPage from "@/views/ReportGenerationPage.vue";
 
 const router =  createRouter({
   history: createWebHashHistory("/"),
@@ -55,7 +56,12 @@ const router =  createRouter({
     {  
       path: "/metrics",
       name: "actualMetrics",
-      component: ActualMetrics,
+      component: ActualMetricsPage,
+    },
+    {  
+      path: "/report-generation",
+      name: "reportGeneration",
+      component: ReportGenerationPage,
     },
   ],
 });
