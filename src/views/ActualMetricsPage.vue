@@ -3,16 +3,21 @@
         <h1>Metrics </h1>
         <br/>
         <v-row>
-            <v-col cols="12">
-            <v-autocomplete
-                v-model="selectedScenarios"
-                :items="scenariosList"
-                label="Select Items"
-                multiple
-                dense
-                item-title="title"
-                item-value="value"
-                ></v-autocomplete>
+            <v-col cols="6">
+                <v-autocomplete
+                    v-model="selectedScenarios"
+                    :items="scenariosList"
+                    label="Select Scenario"
+                    dense
+                    item-title="title"
+                    item-value="value"
+                    >
+                </v-autocomplete>
+            </v-col>
+            <v-col col="6">
+                <v-select v-model="typeOfReportSelected" :items="typeOfReportList" label="Metrics type" return-object color="black" item-color="black"
+                        item-title="title" hide-details :menu-props="{ scrollStrategy: 'none' }">
+                </v-select>
             </v-col>
         </v-row>
         <br/>
@@ -21,8 +26,8 @@
             <v-row>
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Total Number of Scenarios"
-                        v-model="totalScenariosForPerformance"
+                        label=" User Action Time"
+                        v-model="UserActionTimePerScenario"
                         outlined
                         dense
                     ></v-text-field>
@@ -30,16 +35,7 @@
 
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Average User Action Time Per Scenario"
-                        v-model="averageUserActionTimePerScenario"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="3">
-                    <v-text-field
-                        label="Average System Delay Per Scenario"
+                        label="System Delay"
                         v-model="averageSystemDelayPerScenario"
                         outlined
                         dense
@@ -48,7 +44,7 @@
 
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Average Network Calls Per Scenario"
+                        label="Network Calls"
                         v-model="averageNetworkCallsPerScenario"
                         outlined
                         dense
@@ -61,44 +57,8 @@
             <v-row>
                 <v-col cols="12" md="6">
                     <v-text-field
-                        label="Total Number of Scenarios"
-                        v-model="totalScenariosForAccessblity"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="6">
-                    <v-text-field
-                        label="Avg. No. of Violations Per Scenario for Critical Category"
+                        label="Accessibility Standard"
                         v-model="averageViolationsCritical"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="6">
-                    <v-text-field
-                        label="Avg. No. of Violations Per Scenario for Serious Category"
-                        v-model="averageViolationsSerious"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="6">
-                    <v-text-field
-                        label="Avg. No. of Violations Per Scenario for Moderate Category"
-                        v-model="averageViolationsModerate"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-                
-                <v-col cols="12" md="6">
-                    <v-text-field
-                        label="Avg. No. of Violations Per Scenario for Minor Category"
-                        v-model="averageViolationsMinor"
                         outlined
                         dense
                     ></v-text-field>
@@ -110,16 +70,7 @@
             <v-row>
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Total Number of Scenarios"
-                        v-model="totalScenariosForBrowserPerformance"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="3">
-                    <v-text-field
-                        label="Avg. Page Completion Per Scenario"
+                        label="Page Completion"
                         v-model="averagePageCompletion"
                         outlined
                         dense
@@ -128,7 +79,7 @@
 
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Avg. Network Latency Per Scenario"
+                        label="Network Latency"
                         v-model="averageNetworkLatency"
                         outlined
                         dense
@@ -137,7 +88,7 @@
 
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Avg. Content Download Per Scenario"
+                        label="Content Download"
                         v-model="averageContentDownload"
                         outlined
                         dense
@@ -148,28 +99,10 @@
             <br/>
             <h3>Internationalization</h3>
             <v-row>
-                <v-col cols="12" md="3">
-                    <v-text-field
-                        label="Total Number of Scenarios"
-                        v-model="totalScenariosForI18N"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="3">
-                    <v-text-field
-                        label="Average Number of Violations Per Scenario for Language"
-                        v-model="averageViolationLanguage"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
                 <v-col cols="12" md="6">
                     <v-combobox
                     v-model="applicationLanguages"
-                    label="Add Application Languages and press enter"
+                    label="Languages"
                     multiple
                     chips
                     clearable
@@ -185,16 +118,7 @@
             <v-row>
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Total No. Of Scenarios"
-                        v-model="totalScenariosForDesignHygiene"
-                        outlined
-                        dense
-                    ></v-text-field>
-                </v-col>
-
-                <v-col cols="12" md="3">
-                    <v-text-field
-                        label="Unique Fonts Per Scenario"
+                        label="Unique no. of Fonts"
                         v-model="uniqueFontsPerScenario"
                         outlined
                         dense
@@ -203,7 +127,7 @@
 
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Unique Colors Per Scenario"
+                        label="Unique no. of Colors"
                         v-model="uniqueColorsPerScenario"
                         outlined
                         dense
@@ -212,7 +136,7 @@
 
                 <v-col cols="12" md="3">
                     <v-text-field
-                        label="Unique Background Colors Per Scenario"
+                        label="Unique no. of Background Colors"
                         v-model="uniqueBackgroundColorsPerScenario"
                         outlined
                         dense
@@ -261,6 +185,12 @@ const scenariosList = ref([
 ]);
 
 const selectedScenarios = ref([]);
+
+const typeOfReportSelected = ref(null);
+const typeOfReportList = ref([
+    { title: "Functional", value: "functional" },
+    { title: "Design", value: "design" }
+]);
 </script>
 
 <style scoped>
@@ -272,34 +202,34 @@ const selectedScenarios = ref([]);
 
 <!-- Total Number of Scenarios	
 1.3333333333333333
-Average User Action Time Per Scenario	
+Average User Action Time	
 11.85s
-Average System Delay Per Scenario	
+Average System Delay	
 26.20s
-Average Network Calls Per Scenario	
+Average Network Calls	
 937 -->
 
 <!-- Total Number of Scenarios	
-Average Number of Violations Per Scenario for Critical Category	
-Average Number of Violations Per Scenario for Serious Category	
-Average Number of Violations Per Scenario for Moderate Category	
-Average Number of Violations Per Scenario for Minor Category	 -->
+Average Number of Violations for Critical Category	
+Average Number of Violations for Serious Category	
+Average Number of Violations for Moderate Category	
+Average Number of Violations for Minor Category	 -->
 
 
 
 <!-- Total Number of Scenarios	
-Average Page Completion Per Scenario	
-Average Network Latency Per Scenario	
-Average Content Download Per Scenario	 -->
+Average Page Completion	
+Average Network Latency	
+Average Content Download	 -->
 
 
 <!-- Total Number of Scenarios	
 Application Language	
-Average Number of Violations Per Scenario for Hindi	1031 -->
+Average Number of Violations for Hindi	1031 -->
 
 
 
 <!-- Total Number of Scenarios for Design Hygiene
-Unique Fonts Per Scenario	
-Unique Colors Per Scenario	
-Unique Background Colors Per Scenario -->
+Unique Fonts	
+Unique Colors	
+Unique Background Colors -->

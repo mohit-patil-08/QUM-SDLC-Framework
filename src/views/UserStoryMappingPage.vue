@@ -7,12 +7,9 @@
                 return-object variant="underlined" density="comfortable" color="black" item-color="black"
                 item-title="title" item-value="value" hide-details :menu-props="{ scrollStrategy: 'none' }" multiple >
             </v-autocomplete>
-            <br/>    
+            <br/><br/>    
             <v-select v-model="userStorySelected" :items="userStoryList" label="User Story" return-object variant="underlined" density="comfortable" color="black" item-color="black" item-title="title" item-value="value" hide-details :menu-props="{ scrollStrategy: 'none' }" >
             </v-select >
-            <br/>
-            <v-autocomplete v-model="metricsSelected" :items="metricsList" label="Metrics" return-object variant="underlined" density="comfortable" color="black" item-color="black" item-title="title" item-value="value" hide-details :menu-props="{ scrollStrategy: 'none' }" multiple chips>
-            </v-autocomplete>
             <br/>
             <div class="submit-btn">
                 <v-btn type="submit" color="primary">Submit</v-btn>

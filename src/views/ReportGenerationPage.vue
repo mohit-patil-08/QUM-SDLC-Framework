@@ -17,7 +17,7 @@
             <br/>
             <hr/>
             <br/>
-            <v-container>
+            <v-container v-if="userStorySelected && typeOfReportSelected">
                     <v-row justify="end">
                         <v-col cols="auto">
                         <v-btn color="primary" @click="downloadFile">
@@ -90,7 +90,7 @@
                             </v-expansion-panel>
                         </v-expansion-panels>
                     </v-row>
-                    <v-row class="summaryRow" v-if="(isDesignView || isReleaseView) && (scenarios.length != 0)">
+                    <v-row class="summaryRow" v-if="(isDesignView || isReleaseView) ">
                         <v-expansion-panels v-model="designPanel">
                             <v-expansion-panel>
                                 <v-expansion-panel-title class="summaryExpansionHeader">
@@ -279,8 +279,8 @@
 </template>
 
 <script setup>
-import { ref,onMounted } from 'vue';
-    const typeOfReportSelected = ref(null);
+import { ref,onMounted,computed,watch } from 'vue';
+    const typeOfReportSelected = ref("");
     const userStorySelected = ref("");
     const typeOfReportList = ref([
     { title: "Functional", value: "functional" },
@@ -456,10 +456,8 @@ import { ref,onMounted } from 'vue';
     });
 
     onMounted(() => {
-        isReleaseView.value = true;
-        isProductView.value = false;
-        isDesignView.value = false;
         summaryPanel.value = [1];
+        console.log(typeOfReportSelected.value);
         // const ctx = document.getElementById('task-time-chart').getContext('2d');
         // new Chart(ctx, {
         //         type: 'bar',
@@ -475,6 +473,15 @@ import { ref,onMounted } from 'vue';
         //     });
     });
 
+    watch(typeOfReportSelected, (newValue) => {
+        console.log('Selected report changed:', newValue.value);
+        isReleaseView.value = newValue.value == "release" ? true : false;
+        isProductView.value = newValue.value == "functional" ? true : false;
+        isDesignView.value = newValue.value == "design" ? true : false;
+        designPanel.value = newValue.value == "design" ? [1] : [0];
+    // Add additional logic here as needed
+    })
+    
 </script>
 
 <style>
